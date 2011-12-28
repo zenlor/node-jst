@@ -1,6 +1,7 @@
 ## node-jst
 
-something like [sprockets](https://github.com/sstephenson/sprockets) but not so much awesome.
+something like [sprockets](https://github.com/sstephenson/sprockets) or
+[Jammit](http://documentcloud.github.com/jammit/) but not so much awesome.
 
 This is a small library I wrote during holidays so, it's a work in progress, most likey won't work :P as expected
 
@@ -65,4 +66,4 @@ Bump the version number, if you really have to, in a separate commit.
 
 Copyright © 2011 Lorenzo Giuliani <lorenzo@frenzart.com>
 
-node-jst is provided as-is under the MIT license. For more information see LICENSE.
+node-jst is provided as-is under the [MIT](http://opensource.org/licenses/mit-license.html) License. For more information see LICENSE.
