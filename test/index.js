@@ -69,23 +69,4 @@ describe('jst', function () {
       });
     });
   });
-
-  describe('underscore templates', function () {
-    it('should be the default compiler', function () {
-      jst.compiler.should.be.equal('underscore');
-    });
-    
-    it('should compile and work as expected', function(done){
-      jst.compile(fixture_path, output_path, function () {
-        var context = vm.createContext({});
-        vm.runInContext(fs.readFileSync(output_path+'/templates.js'), context, output_path+'/underscore2.vm');
-
-        assert.equal(typeof context.JST === 'object', true);
-
-        context.JST['first']({foo: '__foo__'}).should.match(/\_\_foo\_\_/);
-        context.JST['nes/ted']({foo: '__foo__'}).should.match(/\_\_foo\_\_/);
-        done();
-      });
-    });
-  });
 });
