@@ -1,9 +1,8 @@
-## node-jst
+## **J**ava**S**cript**T**emplate (pre-compiler)
 
-something like [sprockets](https://github.com/sstephenson/sprockets) or
-[Jammit](http://documentcloud.github.com/jammit/) but not so much awesome.
+Something like [Jammit](http://documentcloud.github.com/jammit/) but only for your Backbone templates.
 
-This is a small library I wrote during holidays so, it's a work in progress, most likey won't work :P as expected
+This is a small library for [Node.js](http://nodejs.org) I wrote during holidays so, it's a work in progress, most likey won't work as expected.
 
 **JST** will compile a directory full of
 
@@ -12,8 +11,6 @@ This is a small library I wrote during holidays so, it's a work in progress, mos
 - [Underscore](https://documentcloud.github.com/underscore)
 
 templates into a single `templates.js` to use on the frontend
-
-**NOTE** all files must have `.html` extension
 
 Configuration:
 
@@ -66,4 +63,4 @@ Bump the version number, if you really have to, in a separate commit.
 
 Copyright © 2011 Lorenzo Giuliani <lorenzo@frenzart.com>
 
-node-jst is provided as-is under the [MIT](http://opensource.org/licenses/mit-license.html) License. For more information see LICENSE.
+jst is provided as-is under the [MIT](http://opensource.org/licenses/mit-license.html) License. For more information see LICENSE.

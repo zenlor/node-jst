@@ -1,9 +1,9 @@
 {
-  "name": "node-jst"
+  "name": "jst"
 , "description": "A Javascript template pre-compiler."
-, "version": "0.0.1-alpha1"
-, "keywords": ["precompiler", "template", "backbone"]
-, "main": "./lib/jsc.js"
+, "version": "0.0.1-alpha2"
+, "keywords": ["precompiler", "template", "backbone", "jammit"]
+, "main": "./lib/jst.js"
 , "homepage": "https://github.com/aliem/node-jst.git"
 , "author": "Lorenzo Giuliani"
 , "repository": {
