@@ -14,9 +14,9 @@ describe('underscore templates', function () {
   });
 
   it('should have custom settings', function () {
-    jst.compilers.underscore.settings.should.be.an('object');
-    jst.compilers.underscore.settings.interpolate.should.be.a.instanceof(RegExp);
-    jst.compilers.underscore.settings.evaluate.should.be.a.instanceof(RegExp);
+    jst.compilers.underscore.settings.should.be.a('object');
+    jst.compilers.underscore.settings.interpolate.should.be.an.instanceof(RegExp);
+    jst.compilers.underscore.settings.evaluate.should.be.an.instanceof(RegExp);
   });
   
   it('should compile and work as expected', function(done){
