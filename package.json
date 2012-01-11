@@ -18,6 +18,7 @@
   , "mocha": "*"
   , "handlebars": "*"
   , "hogan.js": "*"
+  , "marked": "*"
   }
 , "licenses": [ 
     { "type": "MIT", "url": "http://opensource.org/licenses/mit-license.html" }
