@@ -53,6 +53,6 @@ index.html:
 		> docs/index.html
 
 clean-docs:
-	rm -f index.html test.html
+	rm -f docs/index.html docs/test.html
 
 .PHONY: test benchmark clean-docs
