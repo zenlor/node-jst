@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>node JST</title>
+	<style type="text/css">
+		body {
+			padding: 1em 2em;
+			font: 16px/24px Palatino, "Bitstream Vera Serif", sans-serif;
+			color: #555555;
+		}
+		header {
+			border-bottom: 1px solid #ccc;
+		}
+		footer {
+			border-top: 1px solid #ccc;
+			padding-top: 1em;
+		}
+		a {
+			color: #6b4f3a;
+		}
+		a:hover {
+			color: #9e7354;
+		}
+	</style>
+</head>
+	<body>
+		<nav><a href="/node-jst/index.html">index</a> | <a href="/node-jst/test.html">index</a></nav>
+		<header><h1>node-jst</h1></header>./node_modules/.bin/mocha \
+		--require should \
+		--reporter doc \
+		--growl \
+		test/*.js
+    <section class="suite">
+      <h1>jst</h1>
+      <dl>
+        <section class="suite">
+          <h1>object</h1>
+          <dl>
+            <dt>should export ƒ() compile</dt>
+            <dd><pre><code>
+jst.should.have.ownProperty('compile');
+done();</code></pre></dd>
+            <dt>should export ƒ() watcher</dt>
+            <dd><pre><code>
+jst.should.have.ownProperty('watcher');
+done();</code></pre></dd>
+            <dt>should export a set of compilers</dt>
+            <dd><pre><code>
+jst.should.have.ownProperty('compilers');
+done();</code></pre></dd>
+            <dt>should export a default compiler</dt>
+            <dd><pre><code>
+jst.should.have.ownProperty('compiler');
+done();</code></pre></dd>
+            <dt>should export an extra ƒ() _walk</dt>
+            <dd><pre><code>
+jst.should.have.ownProperty('_walk');
+done();</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>ƒ() _walk</h1>
+          <dl>
+            <dt>should walk relative paths by process.cwd()</dt>
+            <dd><pre><code>
+jst._walk('./test/fixtures', done);</code></pre></dd>
+            <dt>should walk and resolve relative paths by process.cwd()</dt>
+            <dd><pre><code>
+jst._walk('./test/fixtures', function(e, data){
+  data[0].should.match(new RegExp(fixture_path));
+  done(e, data);
+});</code></pre></dd>
+            <section class="suite">
+              <h1>output</h1>
+              <dl>
+                <dt>should be async</dt>
+                <dd><pre><code>
+jst._walk(fixture_path, done);</code></pre></dd>
+                <dt>should return an Array</dt>
+                <dd><pre><code>
+jst._walk(fixture_path, function (e, data) {
+  data.should.be.an.instanceof(Array);
+  done(e, data);
+});</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>ƒ() compile</h1>
+          <dl>
+            <dt>should compile a directory</dt>
+            <dd><pre><code>
+jst.compile(fixture_path, output_path, function() {
+  fs.stat(output_path+'/templates.js', done)
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>underscore templates</h1>
+      <dl>
+        <dt>should be the default compiler</dt>
+        <dd><pre><code>
+jst.compiler.should.be.equal('underscore');</code></pre></dd>
+        <dt>should have custom settings</dt>
+        <dd><pre><code>
+jst.compilers.underscore.settings.should.be.a('object');
+jst.compilers.underscore.settings.interpolate.should.be.an.instanceof(RegExp);
+jst.compilers.underscore.settings.evaluate.should.be.an.instanceof(RegExp);</code></pre></dd>
+        <dt>should compile and work as expected</dt>
+        <dd><pre><code>
+jst.compile(fixture_path, output_path, function () {
+  var context = vm.createContext({});
+  vm.runInContext(fs.readFileSync(output_path+'/templates.js'), context, output_path+'/underscore.vm');
+
+  assert.equal(typeof context.JST === 'object', true);
+
+  context.JST['first']({foo: '__foo__'}).should.match(/\_\_foo\_\_/);
+  context.JST['nes/ted']({foo: '__foo__'}).should.match(/\_\_foo\_\_/);
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+	<footer>
+		<b>node-jst</b> &copy; lorenzo <em>at</em> frenzart <em>dot</em> com <br>
+		Released under <a href="https://github.com/aliem/node-jst/blob/master/LICENSE">MIT</a> license
+	</footer>
+	</body>
+</html>

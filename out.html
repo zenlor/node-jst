@@ -1,0 +1,54 @@
+<h2><strong>J</strong>ava<strong>S</strong>cript<strong>T</strong>emplate (pre-compiler)</h2>
+<p>Something like <a href="http://documentcloud.github.com/jammit/">Jammit</a> but only for your Backbone templates.
+
+</p>
+<p>This is a small library for <a href="http://nodejs.org">Node.js</a> I wrote during holidays so, it&apos;s a work in progress, most likey won&apos;t work as expected.
+
+</p>
+<p><strong>JST</strong> will compile a directory full of
+
+</p>
+<ul><li><a href="http://handlebarsjs.com">Handlebars</a></li><li><a href="https://twitter.github.com/hogan.js">Hogan.js</a></li><li><a href="https://documentcloud.github.com/underscore">Underscore</a> </li></ul>
+<p>templates into a single <code>templates.js</code> to use on the frontend
+
+</p>
+<p>Configuration:
+
+</p>
+<pre><code class="js">var jst = require(&apos;jst&apos;);
+jst.compiler = &apos;handlebars&apos;; // or &apos;underscore&apos; (default) or &apos;hogan&apos;</code></pre>
+
+<p>Example One-time Compile:
+
+</p>
+<pre><code class="js">jst.compile(__dirname + &apos;/templates&apos;, __dirname + &apos;/public/javascripts/&apos;, function() {
+  return console.log(&apos;recompiled &apos; + &apos;/javascripts/admin/templates.js&apos;.red);
+});</code></pre>
+
+<p>Example directory watcher (useful in a development environment):
+
+</p>
+<pre><code class="js">jst.watcher(__dirname + &apos;/templates&apos;, __dirname + &apos;/public/javascripts/&apos;, function() {
+  return console.log(&apos;recompiled &apos; + &apos;/javascripts/admin/templates.js&apos;.red);
+});</code></pre>
+
+<p>You can access to the template functions using the global namespace <code>JST</code>:
+
+</p>
+<pre><code class="js">var teplate = JST.foo({
+  template: &apos;context&apos;
+}, template_options);
+
+$(&apos;#foo&apos;).htm(template);</code></pre>
+<h2>TODO</h2>
+<ol><li>Write tests</li><li>Write more tests</li><li>rework the file watcher using inotify/fswatcher</li><li>use it daily </li></ol>
+<h3>Contribute</h3>
+<p>Fork the project.<br>Make your feature addition or bug fix.<br>Send me a pull request. Bonus points for topic branches.<br>Bump the version number, if you really have to, in a separate commit.
+
+
+</p>
+<h3>License</h3>
+<p>Copyright © 2011 Lorenzo Giuliani <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#108;&#111;&#x72;&#x65;&#x6e;&#122;&#111;&#x40;&#102;&#x72;&#101;&#110;&#x7a;&#x61;&#x72;&#116;&#46;&#99;&#x6f;&#x6d;">&#108;&#111;&#x72;&#x65;&#x6e;&#122;&#111;&#x40;&#102;&#x72;&#101;&#110;&#x7a;&#x61;&#x72;&#116;&#46;&#99;&#x6f;&#x6d;</a>
+
+</p>
+<p>jst is provided as-is under the <a href="http://opensource.org/licenses/mit-license.html">MIT</a> License. For more information see LICENSE.</p>
