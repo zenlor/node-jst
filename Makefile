@@ -3,6 +3,7 @@
 #
 TESTS = test/*.js
 REPORTER = list
+COMMIT = $(git rev-parse HEAD)
 
 #
 # Run tests
@@ -32,13 +33,10 @@ benchmark:
 # Docs
 #
 docs: clean-docs index.html test.html
-	git add -A
-	git stash
 	git checkout gh-pages
-
-	git add -A
-	git stash pop
-	git commit -am 'updating docs'
+	mv docs/index.html index.html
+	mv docs/test.html test.html
+	git commit -am 'updating docs from $(COMMIT)'
 	git push origin gh-pages
 	git checkout master
 
@@ -46,13 +44,13 @@ test.html:
 	make test \
 	REPORTER=doc \
 		| cat docs/head.html - docs/tail.html \
-		> test.html
+		> docs/test.html
 
 index.html:
 	cat Readme.md | \
 		./node_modules/.bin/marked | \
 		cat docs/head.html - docs/tail.html \
-		> index.html
+		> docs/index.html
 
 clean-docs:
 	rm -f index.html test.html
