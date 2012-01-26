@@ -18,6 +18,7 @@
   , "mocha": "*"
   , "handlebars": "*"
   , "hogan.js": "*"
+  , "whiskers": "*"
   , "marked": "*"
   }
 , "licenses": [ 
