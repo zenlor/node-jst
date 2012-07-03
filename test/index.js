@@ -33,6 +33,10 @@ describe('jst', function () {
       jst.should.have.ownProperty('compiler');
       done();
     });
+    it('should export a default namespace', function (done) {
+      jst.should.have.ownProperty('namespace');
+      done();
+    });
     it('should export an extra ƒ() _walk', function (done) {
       jst.should.have.ownProperty('_walk');
       done();

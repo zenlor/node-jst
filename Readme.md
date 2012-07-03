@@ -44,6 +44,18 @@ var teplate = JST.foo({
 
 $('#foo').htm(template);
 ```
+
+## Custom Namespace
+
+The global namespace can be costumized using the jst.namespace var:
+
+``` js
+var jst = require('jst');
+
+jst.namespace = 'MyCustomNameSpace'
+```
+
+
 ## TODO
 
 1. Write tests
