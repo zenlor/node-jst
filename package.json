@@ -1,7 +1,7 @@
 {
   "name": "jst"
 , "description": "A Javascript template pre-compiler."
-, "version": "0.0.1-alpha.4"
+, "version": "0.0.1-alpha.5"
 , "keywords": ["precompiler", "template", "backbone", "jammit"]
 , "main": "./lib/jst.js"
 , "homepage": "https://github.com/aliem/node-jst.git"
