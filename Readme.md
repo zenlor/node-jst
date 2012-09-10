@@ -9,6 +9,8 @@ This is a small library for [Node.js](http://nodejs.org) I wrote during holidays
 - [Handlebars](http://handlebarsjs.com)
 - [Hogan.js](https://twitter.github.com/hogan.js)
 - [Underscore](https://documentcloud.github.com/underscore)
+- [Whiskers.js](https://github.com/gsf/whiskers.js)
+- [Minstache](https://github.com/visionmedia/minstache)
 
 templates into a single `templates.js` to use on the frontend
 
