@@ -19,6 +19,7 @@
   , "handlebars": "*"
   , "hogan.js": "*"
   , "whiskers": "*"
+  , "minstache": "*"
   , "marked": "*"
   }
 , "licenses": [ 

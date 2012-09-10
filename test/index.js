@@ -12,8 +12,8 @@ var fs = require('fs')
   , template = "Hello {{world}}!!"
   ;
 
-// maintain Mustache-like compatability in underscore templates
-jst.compilers.underscore.settings.interpolate = /\{\{([\s\S]+?)\}\}/g;
+// maintain Minstache-like compatability in underscore templates
+jst.compilers.underscore.settings.interpolate = /\{([\s\S]+?)\}/g;
 
 describe('jst', function () {
   describe('object', function () {
