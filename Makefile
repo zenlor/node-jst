@@ -1,7 +1,11 @@
 #
 # Test configuration
 #
-TESTS = test/*.js
+TESTS = \
+	test/index.js \
+	test/underscore_templates.js \
+	test/minstache_templates.js \
+	test/whiskers_templates.js
 REPORTER = list
 COMMIT = $(git rev-parse HEAD)
 

@@ -8,25 +8,20 @@ var fs = require('fs')
   , output_path = path.resolve(__dirname, './output')
   ;
 
-describe('underscore templates', function () {
+describe('whiskers templates', function () {
+
   before(function(){
-    jst.compiler = 'underscore';
+    jst.compiler = 'whiskers';
   });
 
   it('should be the active compiler', function () {
-    jst.compiler.should.be.equal('underscore');
+    jst.compiler.should.be.equal('whiskers');
   });
 
-  it('should have custom settings', function () {
-    jst.compilers.underscore.settings.should.be.a('object');
-    jst.compilers.underscore.settings.interpolate.should.be.an.instanceof(RegExp);
-    jst.compilers.underscore.settings.evaluate.should.be.an.instanceof(RegExp);
-  });
-  
   it('should compile and work as expected', function(done){
     jst.compile(fixture_path, output_path, function () {
       var context = vm.createContext({});
-      vm.runInContext(fs.readFileSync(output_path+'/templates.js'), context, output_path+'/underscore.vm');
+      vm.runInContext(fs.readFileSync(output_path+'/templates.js'), context, output_path+'/whiskers.vm');
 
       assert.equal(typeof context.JST === 'object', true);
 
